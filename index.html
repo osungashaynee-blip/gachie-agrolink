@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GACHIE AGROLINK — Fresh Onions Online</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="#">🧅 GACHIE AGROLINK</a>
+      <nav>
+        <a href="#shop">Shop</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <button class="cart-btn" id="cartBtn">Cart (<span id="cartCount">0</span>)</button>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container hero-inner">
+      <h1>Farm-fresh onions,<br>delivered to your door.</h1>
+      <p>Sweet, pungent, red, and white — grown locally, shipped within 24 hours of harvest.</p>
+      <a class="btn" href="#shop">Shop Onions</a>
+    </div>
+  </section>
+
+  <section class="shop container" id="shop">
+    <h2>Our Onions</h2>
+    <div class="products" id="products"></div>
+  </section>
+
+  <section class="about" id="about">
+    <div class="container">
+      <h2>Why GACHIE AGROLINK?</h2>
+      <div class="features">
+        <div class="feature">
+          <h3>🌱 Grown Local</h3>
+          <p>Family farms within 100 miles. No cold-storage months-old bulbs.</p>
+        </div>
+        <div class="feature">
+          <h3>🚚 Fast Shipping</h3>
+          <p>Ordered by 2pm ships same day. Free shipping over $25.</p>
+        </div>
+        <div class="feature">
+          <h3>💯 Fresh Guarantee</h3>
+          <p>Not happy? Full refund, no questions asked.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer id="contact">
+    <div class="container">
+      <h2>Contact</h2>
+      <p>hello@gagrolink.example · (555) 123-4567</p>
+      <p class="copy">© 2026 GACHIE AGROLINK Farm</p>
+    </div>
+  </footer>
+
+  <aside class="cart-drawer" id="cartDrawer">
+    <div class="cart-header">
+      <h3>Your Cart</h3>
+      <button id="closeCart">✕</button>
+    </div>
+    <div class="cart-items" id="cartItems"></div>
+    <div class="cart-footer">
+      <div class="cart-total">Total: <strong id="cartTotal">$0.00</strong></div>
+      <button class="btn checkout" id="checkoutBtn">Checkout</button>
+    </div>
+  </aside>
+  <div class="overlay" id="overlay"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
