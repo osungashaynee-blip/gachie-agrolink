@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 120">
+  <defs>
+    <radialGradient id="bulb" cx="40%" cy="35%" r="75%">
+      <stop offset="0%" stop-color="#f2c87d"/>
+      <stop offset="55%" stop-color="#d19a4a"/>
+      <stop offset="100%" stop-color="#9c5f22"/>
+    </radialGradient>
+  </defs>
+  <path d="M50 30 C47 18 50 8 58 0 C54 10 54 20 56 30 Z" fill="#6f9c3a"/>
+  <path d="M50 30 C53 22 62 16 70 14 C62 20 57 26 55 32 Z" fill="#8ab44a"/>
+  <path d="M50 28 C50 28 44 30 44 34 L56 34 C56 30 50 28 50 28 Z" fill="#7a4a1c"/>
+  <path d="M50 32 C74 32 92 52 88 76 C84 98 68 110 50 110 C32 110 16 98 12 76 C8 52 26 32 50 32 Z" fill="url(#bulb)"/>
+  <path d="M50 34 C46 55 46 88 50 108" stroke="#a06a2c" stroke-width="2.5" fill="none" opacity=".7"/>
+  <path d="M32 42 C24 60 24 88 32 104" stroke="#a06a2c" stroke-width="2.5" fill="none" opacity=".55"/>
+  <path d="M68 42 C76 60 76 88 68 104" stroke="#a06a2c" stroke-width="2.5" fill="none" opacity=".55"/>
+  <path d="M50 109 L43 117 M50 110 L50 118 M50 109 L57 117" stroke="#8a6a3a" stroke-width="2" stroke-linecap="round"/>
+</svg>
