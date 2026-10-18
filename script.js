@@ -123,6 +123,16 @@ kgInput.addEventListener("keydown", (e) => {
   if (e.key === "Enter") orderNext.click();
 });
 
+const fabContact = document.getElementById("fabContact");
+const contactModal = document.getElementById("contactModal");
+const contactClose = document.getElementById("contactClose");
+
+fabContact.addEventListener("click", () => contactModal.classList.add("show"));
+contactClose.addEventListener("click", () => contactModal.classList.remove("show"));
+contactModal.addEventListener("click", (e) => {
+  if (e.target === contactModal) contactModal.classList.remove("show");
+});
+
 function removeFromCart(id) {
   delete cart[id];
   renderCart();
