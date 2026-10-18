@@ -75,6 +75,33 @@
     </div>
   </footer>
 
+  <div class="order-modal" id="orderModal">
+    <div class="order-box">
+      <button class="order-close" id="orderClose">✕</button>
+
+      <div class="order-step" id="stepKg">
+        <h3 id="orderProductName">Product</h3>
+        <p class="order-price" id="orderUnitPrice">Ksh 0/kg</p>
+        <label for="kgInput">How many kgs?</label>
+        <input type="number" id="kgInput" min="1" step="1" placeholder="e.g. 5" required>
+        <p class="kg-error" id="kgError">Please enter a valid number of kgs.</p>
+        <button class="btn order-next" id="orderNext">Next</button>
+      </div>
+
+      <div class="order-step hidden" id="stepContact">
+        <h3>Complete Your Order</h3>
+        <p class="order-summary" id="orderSummary"></p>
+        <p class="contact-prompt">Contact us to place your order:</p>
+        <a class="contact-opt whatsapp" id="orderWhatsApp" href="#" target="_blank" rel="noopener">
+          <span class="opt-icon">💬</span> WhatsApp 0101817921
+        </a>
+        <a class="contact-opt call" id="orderCall" href="tel:+254745908475">
+          <span class="opt-icon">📞</span> Call 0745908475
+        </a>
+      </div>
+    </div>
+  </div>
+
   <aside class="cart-drawer" id="cartDrawer">
     <div class="cart-header">
       <h3>Your Cart</h3>
