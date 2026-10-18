@@ -55,6 +55,24 @@ section, footer { position: relative; z-index: 1; }
 .logo-img { width: 34px; height: 40px; }
 nav a { margin-left: 20px; color: var(--dark); text-decoration: none; font-weight: 500; }
 nav a:hover { color: var(--red-onion); }
+.header-actions { display: flex; align-items: center; gap: 10px; }
+.copy-link-btn {
+  background: transparent;
+  color: var(--brown);
+  border: 2px solid var(--gold);
+  padding: 7px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: .9rem;
+  transition: background .15s, color .15s;
+}
+.copy-link-btn:hover { background: var(--gold); color: var(--dark); }
+.copy-link-btn.copied {
+  background: #1f7a3d;
+  border-color: #1f7a3d;
+  color: #fff;
+}
 .cart-btn {
   background: var(--red-onion);
   color: #fff;
@@ -219,4 +237,6 @@ footer .copy { margin-top: 20px; opacity: .6; font-size: .85rem; }
 
 @media (max-width: 640px) {
   nav { display: none; }
+  .copy-link-btn { padding: 6px 10px; font-size: .8rem; }
+  .header-inner { gap: 8px; }
 }
