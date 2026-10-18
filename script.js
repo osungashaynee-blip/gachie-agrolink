@@ -54,10 +54,74 @@ function renderProducts() {
 }
 
 function addToCart(id) {
-  cart[id] = (cart[id] || 0) + 1;
-  renderCart();
-  openCart();
+  const p = products.find(p => p.id === id);
+  openOrderModal(p);
 }
+
+const orderModal = document.getElementById("orderModal");
+const orderClose = document.getElementById("orderClose");
+const stepKg = document.getElementById("stepKg");
+const stepContact = document.getElementById("stepContact");
+const orderProductName = document.getElementById("orderProductName");
+const orderUnitPrice = document.getElementById("orderUnitPrice");
+const kgInput = document.getElementById("kgInput");
+const kgError = document.getElementById("kgError");
+const orderNext = document.getElementById("orderNext");
+const orderSummary = document.getElementById("orderSummary");
+const orderWhatsApp = document.getElementById("orderWhatsApp");
+const orderCall = document.getElementById("orderCall");
+
+let currentProduct = null;
+
+function openOrderModal(p) {
+  currentProduct = p;
+  orderProductName.textContent = p.name;
+  orderUnitPrice.textContent = "Ksh " + p.price.toFixed(2) + "/kg";
+  kgInput.value = "";
+  kgError.classList.remove("show");
+  stepKg.classList.remove("hidden");
+  stepContact.classList.add("hidden");
+  orderModal.classList.add("show");
+  kgInput.focus();
+}
+
+function closeOrderModal() {
+  orderModal.classList.remove("show");
+  currentProduct = null;
+}
+
+orderClose.addEventListener("click", closeOrderModal);
+orderModal.addEventListener("click", (e) => {
+  if (e.target === orderModal) closeOrderModal();
+});
+
+orderNext.addEventListener("click", () => {
+  const kg = parseFloat(kgInput.value);
+  if (!kg || kg <= 0 || isNaN(kg)) {
+    kgError.classList.add("show");
+    kgInput.focus();
+    return;
+  }
+  kgError.classList.remove("show");
+
+  const total = currentProduct.price * kg;
+  orderSummary.textContent = currentProduct.name + " — " + kg + " kg = Ksh " + total.toFixed(2);
+
+  const msg = "Hello GACHIE AGROLINK! I'd like to order:\n\n"
+    + currentProduct.name + "\n"
+    + "Quantity: " + kg + " kg\n"
+    + "Total: Ksh " + total.toFixed(2) + "\n\n"
+    + "Please confirm availability. Thank you!";
+  orderWhatsApp.href = "https://wa.me/254101817921?text=" + encodeURIComponent(msg);
+  orderCall.href = "tel:+254745908475";
+
+  stepKg.classList.add("hidden");
+  stepContact.classList.remove("hidden");
+});
+
+kgInput.addEventListener("keydown", (e) => {
+  if (e.key === "Enter") orderNext.click();
+});
 
 function removeFromCart(id) {
   delete cart[id];
