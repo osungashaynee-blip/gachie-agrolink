@@ -235,6 +235,95 @@ footer .copy { margin-top: 20px; opacity: .6; font-size: .85rem; }
 
 .empty { color: #999; text-align: center; margin-top: 30px; }
 
+/* Order modal */
+.order-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 200;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .2s;
+}
+.order-modal.show { opacity: 1; pointer-events: auto; }
+.order-box {
+  background: #fff;
+  border-radius: 16px;
+  padding: 32px 28px;
+  width: 380px;
+  max-width: 92vw;
+  position: relative;
+  box-shadow: 0 20px 50px rgba(0,0,0,.25);
+  text-align: center;
+}
+.order-close {
+  position: absolute;
+  top: 12px; right: 14px;
+  background: none; border: none;
+  font-size: 1.2rem; cursor: pointer;
+  color: #999;
+}
+.order-close:hover { color: var(--dark); }
+.order-step h3 { color: var(--brown); margin-bottom: 6px; font-size: 1.3rem; }
+.order-price { color: var(--red-onion); font-weight: 700; margin-bottom: 16px; }
+.order-step label { display: block; font-weight: 600; margin-bottom: 8px; text-align: left; }
+.order-step input[type="number"] {
+  width: 100%;
+  padding: 12px 14px;
+  border: 2px solid var(--gold);
+  border-radius: 10px;
+  font-size: 1.1rem;
+  outline: none;
+  margin-bottom: 6px;
+}
+.order-step input[type="number"]:focus { border-color: var(--red-onion); }
+.kg-error {
+  color: #c00;
+  font-size: .85rem;
+  display: none;
+  text-align: left;
+  margin-bottom: 8px;
+}
+.kg-error.show { display: block; }
+.order-next {
+  background: var(--gold);
+  color: var(--dark);
+  width: 100%;
+  padding: 12px;
+  margin-top: 8px;
+  font-size: 1rem;
+}
+.hidden { display: none; }
+.order-summary {
+  background: var(--cream);
+  border-radius: 10px;
+  padding: 12px;
+  margin: 14px 0;
+  font-weight: 600;
+  color: var(--brown);
+}
+.contact-prompt { margin-bottom: 14px; font-size: .95rem; }
+.contact-opt {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 14px;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1rem;
+  margin-bottom: 10px;
+  transition: transform .15s;
+}
+.contact-opt:hover { transform: translateY(-2px); }
+.contact-opt.whatsapp { background: #25d366; color: #fff; }
+.contact-opt.call { background: var(--red-onion); color: #fff; }
+.opt-icon { font-size: 1.3rem; }
+
 @media (max-width: 640px) {
   nav { display: none; }
   .copy-link-btn { padding: 6px 10px; font-size: .8rem; }
