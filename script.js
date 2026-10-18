@@ -1,10 +1,5 @@
 const products = [
-  { id: 1, img: "images/onion1.svg", name: "Yellow Onion", desc: "All-purpose classic. Sharp when raw, sweet when caramelized.", price: 3.99 },
-  { id: 2, img: "images/onion2.svg", name: "Red Onion", desc: "Mild and colorful. Perfect for salads and pickling.", price: 4.49 },
-  { id: 3, img: "images/onion3.svg", name: "Sweet Vidalia", desc: "Extra sweet and low in sulfur. Great raw.", price: 5.29 },
-  { id: 4, img: "images/onion4.svg", name: "Shallots", desc: "Delicate, nutty flavor for dressings and sauces.", price: 6.99 },
-  { id: 5, img: "images/onion5.svg", name: "Yellow Onion — 5 lb Bag", desc: "Stock up. Best value for home cooks.", price: 8.99 },
-  { id: 6, img: "images/onion6.svg", name: "Spring Onions", desc: "Fresh bunches, harvested this morning.", price: 2.99 },
+  { id: 1, img: "images/red-onion-01.jpg", name: "Fresh Red Onions", desc: "Farm-fresh red onions. Mild, colorful, and perfect for salads and pickling.", price: 4.49 },
 ];
 
 const cart = {};
@@ -93,3 +88,9 @@ checkoutBtn.addEventListener("click", () => {
 
 renderProducts();
 renderCart();
+
+const galleryGrid = document.getElementById("galleryGrid");
+galleryGrid.innerHTML = Array.from({ length: 15 }, (_, i) => {
+  const n = String(i + 1).padStart(2, "0");
+  return `<img src="images/red-onion-${n}.jpg" alt="Red onion photo ${i + 1}" loading="lazy">`;
+}).join("");
